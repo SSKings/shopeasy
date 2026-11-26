@@ -1,6 +1,6 @@
 # ---------- build ----------
 # Imagens fixadas por digest (revisão 3, M4): a tag pode ser republicada; o digest não. O Dependabot atualiza.
-FROM eclipse-temurin:17-jdk-alpine@sha256:efefbce46b0d79073a3a676d91ac6c4bf370d348af18e388bbf7482543d7866a AS build
+FROM eclipse-temurin:17-jdk-alpine@sha256:c4ca466f9ff25bdb4d28ff87199655c027d37b00226469e61d53f5fa11aae873 AS build
 WORKDIR /src
 COPY .mvn .mvn
 COPY mvnw pom.xml ./
@@ -10,7 +10,7 @@ COPY src src
 RUN ./mvnw -q -B -C -DskipTests package && cp target/ecommerce-*.jar /app.jar
 
 # ---------- runtime ----------
-FROM eclipse-temurin:17-jre-alpine@sha256:e2ba4e947bd5e236a9866fbdda03e4936036cb9e9d16ea0d84d103d6634a5c21
+FROM eclipse-temurin:17-jre-alpine@sha256:2b4113ae80e31f103b284dd3bc3e008add670cf8555417b5b289fa1128f2f0a3
 # usuário sem privilégios; o container não roda como root
 RUN addgroup -S app && adduser -S app -G app && mkdir -p /var/log/shopeasy && chown app:app /var/log/shopeasy
 USER app
