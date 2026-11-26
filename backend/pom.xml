@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>4.1.2</version>
+		<version>4.2.0</version>
 		<relativePath/>
 	</parent>
 	<groupId>com.sskings</groupId>
@@ -17,7 +17,7 @@
 		<java.version>17</java.version>
 		<!-- vazio por padrão: o JaCoCo preenche no verify; sem isso, quem roda sem ele (PIT) recebe "@{argLine}" literal -->
 		<argLine></argLine>
-		<springdoc.version>3.2.0</springdoc.version>
+		<springdoc.version>3.2.1</springdoc.version>
 		<!-- agente Java do OpenTelemetry usado por run-backend.sh (não entra no jar da aplicação) -->
 		<otel-javaagent.version>2.33.0</otel-javaagent.version>
 		<!--
